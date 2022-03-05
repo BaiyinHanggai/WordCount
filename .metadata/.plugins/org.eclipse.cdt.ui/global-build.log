@@ -1,0 +1,485 @@
+19:49:34 **** Rebuild of configuration Debug for project WordCount ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\WordCount.o" "..\\src\\WordCount.c" 
+..\src\WordCount.c:16: warning: ignoring #pragma comment  [-Wunknown-pragmas]
+ #pragma comment(lib, "pthreadVC2.lib")
+ 
+..\src\WordCount.c: In function 'main':
+..\src\WordCount.c:38:9: warning: implicit declaration of function 'scanf_s'; did you mean 'sscanf_s'? [-Wimplicit-function-declaration]
+  while (scanf_s("%d", &processCount))
+         ^~~~~~~
+         sscanf_s
+..\src\WordCount.c:55:32: warning: pointer targets in passing argument 3 of 'getFileHandle' differ in signedness [-Wpointer-sign]
+  getFileHandle(argv[1], &mapH, &qwFileSize);
+                                ^~~~~~~~~~~
+In file included from ..\src\WordCount.c:15:
+..\src\file.h:6:6: note: expected 'long long int *' but argument is of type 'long long unsigned int *'
+ void getFileHandle(char *path, HANDLE *mapFileH, long long *qwFileSize);
+      ^~~~~~~~~~~~~
+..\src\WordCount.c:78:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:78:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\WordCount.c:78:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:78:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\file.o" "..\\src\\file.c" 
+..\src\file.c: In function 'getWordCount':
+..\src\file.c:26:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   printf("MapViewOfFile Failed %d", GetLastError());
+   ^~~~~~
+..\src\file.c:26:3: warning: incompatible implicit declaration of built-in function 'printf'
+..\src\file.c:26:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+..\src\file.c:3:1:
++#include <stdio.h>
+ 
+..\src\file.c:26:3:
+   printf("MapViewOfFile Failed %d", GetLastError());
+   ^~~~~~
+..\src\file.c:26:33: warning: format '%d' expects argument of type 'int', but argument 2 has type 'DWORD' {aka 'long unsigned int'} [-Wformat=]
+   printf("MapViewOfFile Failed %d", GetLastError());
+                                ~^   ~~~~~~~~~~~~~~
+                                %ld
+..\src\file.c: In function 'getFileHandle':
+..\src\file.c:67:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("Create file failed :%d", GetLastError());
+   ^~~~~~
+..\src\file.c:67:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+..\src\file.c:67:32: warning: format '%d' expects argument of type 'int', but argument 2 has type 'DWORD' {aka 'long unsigned int'} [-Wformat=]
+   printf("Create file failed :%d", GetLastError());
+                               ~^   ~~~~~~~~~~~~~~
+                               %ld
+..\src\file.c:80:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("CreateFileMapping failed :%d", GetLastError());
+   ^~~~~~
+..\src\file.c:80:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+..\src\file.c:80:38: warning: format '%d' expects argument of type 'int', but argument 2 has type 'DWORD' {aka 'long unsigned int'} [-Wformat=]
+   printf("CreateFileMapping failed :%d", GetLastError());
+                                     ~^   ~~~~~~~~~~~~~~
+                                     %ld
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+..\src\main.c:6: warning: ignoring #pragma comment  [-Wunknown-pragmas]
+ #pragma comment(lib, "pthreadVC2.lib")
+ 
+..\src\main.c: In function 'main':
+..\src\main.c:28:9: warning: implicit declaration of function 'scanf_s'; did you mean 'sscanf_s'? [-Wimplicit-function-declaration]
+  while (scanf_s("%d", &processCount))
+         ^~~~~~~
+         sscanf_s
+..\src\main.c:45:32: warning: pointer targets in passing argument 3 of 'getFileHandle' differ in signedness [-Wpointer-sign]
+  getFileHandle(argv[1], &mapH, &qwFileSize);
+                                ^~~~~~~~~~~
+In file included from ..\src\main.c:5:
+..\src\file.h:6:6: note: expected 'long long int *' but argument is of type 'long long unsigned int *'
+ void getFileHandle(char *path, HANDLE *mapFileH, long long *qwFileSize);
+      ^~~~~~~~~~~~~
+..\src\main.c:68:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\main.c:68:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\main.c:68:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\main.c:68:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o WordCount.exe "src\\WordCount.o" "src\\file.o" "src\\main.o" 
+src\main.o: In function `main':
+D:\work\ws\WordCount\WordCount\Debug/../src/main.c:12: multiple definition of `main'
+src\WordCount.o:D:\work\ws\WordCount\WordCount\Debug/../src/WordCount.c:22: first defined here
+src\main.o: In function `getMapViewInfo':
+D:\work\ws\WordCount\WordCount\Debug/../src/main.c:74: multiple definition of `getMapViewInfo'
+src\WordCount.o:D:\work\ws\WordCount\WordCount\Debug/../src/WordCount.c:84: first defined here
+src\main.o:main.c:(.bss+0x0): multiple definition of `g_WordCount'
+src\WordCount.o:WordCount.c:(.bss+0x0): first defined here
+collect2.exe: error: ld returned 1 exit status
+19:50:03 **** Incremental Build of configuration Debug for project WordCount ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\WordCount.o" "..\\src\\WordCount.c" 
+..\src\WordCount.c: In function 'main':
+..\src\WordCount.c:37:9: warning: implicit declaration of function 'scanf_s'; did you mean 'sscanf_s'? [-Wimplicit-function-declaration]
+  while (scanf_s("%d", &processCount))
+         ^~~~~~~
+         sscanf_s
+..\src\WordCount.c:54:32: warning: pointer targets in passing argument 3 of 'getFileHandle' differ in signedness [-Wpointer-sign]
+  getFileHandle(argv[1], &mapH, &qwFileSize);
+                                ^~~~~~~~~~~
+In file included from ..\src\WordCount.c:15:
+..\src\file.h:6:6: note: expected 'long long int *' but argument is of type 'long long unsigned int *'
+ void getFileHandle(char *path, HANDLE *mapFileH, long long *qwFileSize);
+      ^~~~~~~~~~~~~
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o WordCount.exe "src\\WordCount.o" "src\\file.o" "src\\main.o" 
+src\main.o: In function `main':
+D:\work\ws\WordCount\WordCount\Debug/../src/main.c:12: multiple definition of `main'
+src\WordCount.o:D:\work\ws\WordCount\WordCount\Debug/../src/WordCount.c:21: first defined here
+src\main.o: In function `getMapViewInfo':
+D:\work\ws\WordCount\WordCount\Debug/../src/main.c:74: multiple definition of `getMapViewInfo'
+src\WordCount.o:D:\work\ws\WordCount\WordCount\Debug/../src/WordCount.c:83: first defined here
+src\main.o:main.c:(.bss+0x0): multiple definition of `g_WordCount'
+src\WordCount.o:WordCount.c:(.bss+0x0): first defined here
+collect2.exe: error: ld returned 1 exit status
+19:50:30 **** Clean-only build of configuration Debug for project WordCount ****
+rm -rf src/WordCount.o src/file.o src/WordCount.d WordCount.exe src/file.d 
+Cannot run program "rm": Launching failed
+
+Error: Program "rm" not found in PATH
+PATH=[C:\mingw64\bin;\bin;\usr\bin;C:/Users/home/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.2.v20220201-1208/jre/bin/server;C:/Users/home/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.2.v20220201-1208/jre/bin;C:\Program Files\Microsoft\jdk-11.0.12.7-hotspot\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\flutter\bin;C:\Program Files (x86)\Java\jre1.8.0_301\bin;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Users\home\AppData\Local\Microsoft\WindowsApps;C:\Users\home\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\home\.dotnet\tools;C:\mingw64\bin;;C:\Users\home\eclipse\cpp-2021-122\eclipse]
+
+19:50:30 **** Clean-only build of configuration Debug for project WordCount ****
+19:50:31 **** Rebuild of configuration Debug for project WordCount ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\file.o" "..\\src\\file.c" 
+..\src\file.c: In function 'getWordCount':
+..\src\file.c:26:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   printf("MapViewOfFile Failed %d", GetLastError());
+   ^~~~~~
+..\src\file.c:26:3: warning: incompatible implicit declaration of built-in function 'printf'
+..\src\file.c:26:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+..\src\file.c:3:1:
++#include <stdio.h>
+ 
+..\src\file.c:26:3:
+   printf("MapViewOfFile Failed %d", GetLastError());
+   ^~~~~~
+..\src\file.c:26:33: warning: format '%d' expects argument of type 'int', but argument 2 has type 'DWORD' {aka 'long unsigned int'} [-Wformat=]
+   printf("MapViewOfFile Failed %d", GetLastError());
+                                ~^   ~~~~~~~~~~~~~~
+                                %ld
+..\src\file.c: In function 'getFileHandle':
+..\src\file.c:67:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("Create file failed :%d", GetLastError());
+   ^~~~~~
+..\src\file.c:67:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+..\src\file.c:67:32: warning: format '%d' expects argument of type 'int', but argument 2 has type 'DWORD' {aka 'long unsigned int'} [-Wformat=]
+   printf("Create file failed :%d", GetLastError());
+                               ~^   ~~~~~~~~~~~~~~
+                               %ld
+..\src\file.c:80:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("CreateFileMapping failed :%d", GetLastError());
+   ^~~~~~
+..\src\file.c:80:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+..\src\file.c:80:38: warning: format '%d' expects argument of type 'int', but argument 2 has type 'DWORD' {aka 'long unsigned int'} [-Wformat=]
+   printf("CreateFileMapping failed :%d", GetLastError());
+                                     ~^   ~~~~~~~~~~~~~~
+                                     %ld
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\WordCount.o" "..\\src\\WordCount.c" 
+..\src\WordCount.c: In function 'main':
+..\src\WordCount.c:37:9: warning: implicit declaration of function 'scanf_s'; did you mean 'sscanf_s'? [-Wimplicit-function-declaration]
+  while (scanf_s("%d", &processCount))
+         ^~~~~~~
+         sscanf_s
+..\src\WordCount.c:54:32: warning: pointer targets in passing argument 3 of 'getFileHandle' differ in signedness [-Wpointer-sign]
+  getFileHandle(argv[1], &mapH, &qwFileSize);
+                                ^~~~~~~~~~~
+In file included from ..\src\WordCount.c:15:
+..\src\file.h:6:6: note: expected 'long long int *' but argument is of type 'long long unsigned int *'
+ void getFileHandle(char *path, HANDLE *mapFileH, long long *qwFileSize);
+      ^~~~~~~~~~~~~
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o WordCount.exe "src\\WordCount.o" "src\\file.o" 
+19:51:56 **** Incremental Build of configuration Debug for project WordCount ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\WordCount.o" "..\\src\\WordCount.c" 
+..\src\WordCount.c: In function 'main':
+..\src\WordCount.c:37:9: warning: implicit declaration of function 'scanf_s'; did you mean 'sscanf_s'? [-Wimplicit-function-declaration]
+  while (scanf_s("%d", &processCount))
+         ^~~~~~~
+         sscanf_s
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\file.o" "..\\src\\file.c" 
+..\src\file.c: In function 'getWordCount':
+..\src\file.c:26:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   printf("MapViewOfFile Failed %d", GetLastError());
+   ^~~~~~
+..\src\file.c:26:3: warning: incompatible implicit declaration of built-in function 'printf'
+..\src\file.c:26:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+..\src\file.c:3:1:
++#include <stdio.h>
+ 
+..\src\file.c:26:3:
+   printf("MapViewOfFile Failed %d", GetLastError());
+   ^~~~~~
+..\src\file.c:26:33: warning: format '%d' expects argument of type 'int', but argument 2 has type 'DWORD' {aka 'long unsigned int'} [-Wformat=]
+   printf("MapViewOfFile Failed %d", GetLastError());
+                                ~^   ~~~~~~~~~~~~~~
+                                %ld
+..\src\file.c: In function 'getFileHandle':
+..\src\file.c:67:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("Create file failed :%d", GetLastError());
+   ^~~~~~
+..\src\file.c:67:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+..\src\file.c:67:32: warning: format '%d' expects argument of type 'int', but argument 2 has type 'DWORD' {aka 'long unsigned int'} [-Wformat=]
+   printf("Create file failed :%d", GetLastError());
+                               ~^   ~~~~~~~~~~~~~~
+                               %ld
+..\src\file.c:80:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("CreateFileMapping failed :%d", GetLastError());
+   ^~~~~~
+..\src\file.c:80:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+..\src\file.c:80:38: warning: format '%d' expects argument of type 'int', but argument 2 has type 'DWORD' {aka 'long unsigned int'} [-Wformat=]
+   printf("CreateFileMapping failed :%d", GetLastError());
+                                     ~^   ~~~~~~~~~~~~~~
+                                     %ld
+gcc -o WordCount.exe "src\\WordCount.o" "src\\file.o" 
+19:53:54 **** Incremental Build of configuration Debug for project WordCount ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\WordCount.o" "..\\src\\WordCount.c" 
+..\src\WordCount.c: In function 'main':
+..\src\WordCount.c:37:24: warning: passing argument 2 of 'sscanf_s' from incompatible pointer type [-Wincompatible-pointer-types]
+  while (sscanf_s("%d", &processCount))
+                        ^~~~~~~~~~~~~
+In file included from C:/mingw64/x86_64-w64-mingw32/include/stdio.h:1397,
+                 from ..\src\WordCount.c:11:
+C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h:482:61: note: expected 'const char *' but argument is of type 'unsigned int *'
+   _CRTIMP int __cdecl sscanf_s(const char *_Src,const char *_Format,...);
+                                                 ~~~~~~~~~~~~^~~~~~~
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o WordCount.exe "src\\WordCount.o" "src\\file.o" 
+19:54:13 **** Incremental Build of configuration Debug for project WordCount ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\WordCount.o" "..\\src\\WordCount.c" 
+..\src\WordCount.c: In function 'main':
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o WordCount.exe "src\\WordCount.o" "src\\file.o" 
+19:55:33 **** Incremental Build of configuration Debug for project WordCount ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\WordCount.o" "..\\src\\WordCount.c" 
+..\src\WordCount.c: In function 'main':
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o WordCount.exe "src\\WordCount.o" "src\\file.o" 
+C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file WordCount.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+19:55:50 **** Incremental Build of configuration Debug for project WordCount ****
+Info: Internal Builder is used for build
+gcc -o WordCount.exe "src\\WordCount.o" "src\\file.o" 
+19:58:13 **** Incremental Build of configuration Debug for project WordCount ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\WordCount.o" "..\\src\\WordCount.c" 
+..\src\WordCount.c: In function 'main':
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o WordCount.exe "src\\WordCount.o" "src\\file.o" 
+C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file WordCount.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+19:58:38 **** Incremental Build of configuration Debug for project WordCount ****
+Info: Internal Builder is used for build
+gcc -o WordCount.exe "src\\WordCount.o" "src\\file.o" 
+C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file WordCount.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+19:59:06 **** Incremental Build of configuration Debug for project WordCount ****
+Info: Internal Builder is used for build
+gcc -o WordCount.exe "src\\WordCount.o" "src\\file.o" 
+C:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file WordCount.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+19:59:19 **** Incremental Build of configuration Debug for project WordCount ****
+Info: Internal Builder is used for build
+gcc -o WordCount.exe "src\\WordCount.o" "src\\file.o" 
+Info: Nothing to build for WordCount
+Info: Nothing to build for WordCount
+20:00:41 **** Incremental Build of configuration Debug for project WordCount ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\WordCount.o" "..\\src\\WordCount.c" 
+..\src\WordCount.c: In function 'main':
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o WordCount.exe "src\\WordCount.o" "src\\file.o" 
+20:02:48 **** Incremental Build of configuration Debug for project WordCount ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\WordCount.o" "..\\src\\WordCount.c" 
+..\src\WordCount.c: In function 'main':
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o WordCount.exe "src\\WordCount.o" "src\\file.o" 
+Info: Nothing to build for WordCount
+Info: Nothing to build for WordCount
+Info: Nothing to build for WordCount
+20:08:12 **** Incremental Build of configuration Debug for project WordCount ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\WordCount.o" "..\\src\\WordCount.c" 
+..\src\WordCount.c: In function 'main':
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o WordCount.exe "src\\WordCount.o" "src\\file.o" 
+20:10:02 **** Incremental Build of configuration Debug for project WordCount ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\WordCount.o" "..\\src\\WordCount.c" 
+..\src\WordCount.c: In function 'main':
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o WordCount.exe "src\\WordCount.o" "src\\file.o" 
+20:10:18 **** Incremental Build of configuration Debug for project WordCount ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\WordCount.o" "..\\src\\WordCount.c" 
+..\src\WordCount.c: In function 'main':
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o WordCount.exe "src\\WordCount.o" "src\\file.o" 
+Info: Nothing to build for WordCount
+20:10:42 **** Incremental Build of configuration Debug for project WordCount ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\WordCount.o" "..\\src\\WordCount.c" 
+..\src\WordCount.c: In function 'main':
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o WordCount.exe "src\\WordCount.o" "src\\file.o" 
+20:11:47 **** Incremental Build of configuration Debug for project WordCount ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\WordCount.o" "..\\src\\WordCount.c" 
+..\src\WordCount.c: In function 'main':
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o WordCount.exe "src\\WordCount.o" "src\\file.o" 

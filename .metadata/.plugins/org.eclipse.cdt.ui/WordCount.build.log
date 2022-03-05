@@ -1,0 +1,20 @@
+20:11:47 **** Incremental Build of configuration Debug for project WordCount ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\WordCount.o" "..\\src\\WordCount.c" 
+..\src\WordCount.c: In function 'main':
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\WordCount.c:77:26: warning: unknown conversion type character 'l' in format [-Wformat=]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+                          ^
+..\src\WordCount.c:77:9: warning: too many arguments for format [-Wformat-extra-args]
+  printf("Word Count is %lld.\r\n", g_WordCount);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o WordCount.exe "src\\WordCount.o" "src\\file.o" 
+
+20:11:48 Build Finished. 0 errors, 4 warnings. (took 729ms)
+
